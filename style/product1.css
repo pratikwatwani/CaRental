@@ -1,0 +1,30 @@
+#result{
+	width: 60%;
+	margin-top: 2%;
+	margin-left: 8%;
+	margin-right: 8%;
+	background-color: green;
+	border-radius: 20px;
+}
+#query{
+	width: 50%;
+	margin: 10%;
+	color: red;
+	border:5px solid green;
+	padding: 2% 0 2% 10%;
+}
+
+#query > label {
+	display: block;
+	font-size: 2em;
+}
+#query > input[type="submit"]:nth-child(9){
+	display: block;
+	width: 30%;
+	font-size: 2em;
+	border-radius: 10px;
+	color: red;
+	background-color: orange;
+	padding: 1%;
+	margin:10px;
+}

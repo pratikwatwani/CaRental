@@ -1,0 +1,23 @@
+#login_form{
+	width: 50%;
+	padding: 2% 0 0 20%;
+}
+#login_form > label{
+	color:red;
+	font-size: 2em;
+	display: block;
+}
+
+#Username,#password,#login_form > input[type="submit"]:nth-child(5){
+	width: 100%;
+	padding: 2%;
+	font-size: 2em;
+	margin: 1em;
+}
+#message{
+	width: 50%;
+	margin: 10%  20% 20% 20%;
+	background-color: hsl(0, 100%, 80%);
+	border-radius: 10px;
+	padding: 10px;
+}

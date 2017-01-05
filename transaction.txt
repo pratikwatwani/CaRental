@@ -1,0 +1,3 @@
+START TRANSACTION;
+update vehicle 
+set available=2 where available=1;

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Car Rental Site</title>
+		<link href="style/main.css" rel="stylesheet"/>
+		 <!--[if lte IE 6]>
+		<style type="text/css">
+			.container-part1 {
+				height: 100%;
+			}
+		</style>
+		<![endif]-->
+	</head>
+	<body>
+	<section class="container-part1">
+		<article class="header">
+				<div class="logo">logo</div>
+					<ul>
+						<li><a href="#">Customer Care</a></li>
+						<li><a href="#">Terms and Condition</a></li>
+						<li><a href="#">Become Partner</a></li>
+						<li><a href="login.php">Rent Car Now</a></li>
+					</ul>
+		</article>
+		<article class="slideshow">
+
+			<input checked id="one" name="carousel" type="radio" value="1">
+			<label for="one">1</label>
+
+			<input id="two" name="carousel" type="radio" value="2">
+			<label for="two">2</label>
+
+			<input id="three" name="carousel" type="radio" value="3">
+			<label for="three">3</label>
+
+			<input id="four" name="carousel" type="radio" value="4">
+			<label for="four">4</label>
+
+			<input id="five" name="carousel" type="radio" value="5">
+			<label for="five">5</label>
+
+			<input id="six" name="carousel" type="radio" value="6">
+			<label for="six">6</label>
+
+			<input id="seven" name="carousel" type="radio" value="7">
+			<label for="seven">7</label>
+
+			<input id="eight" name="carousel" type="radio" value="8">
+			<label for="eight">8</label>
+
+			<div class="contains">
+				<ul class="carousel">
+					<li><img src="images/1.jpg" alt="Landscape 1"></li>
+					<li><img src="images/2.jpg" alt="Landscape 2"></li>
+					<li><img src="images/3.jpg" alt="Landscape 3"></li>
+					<li><img src="images/4.jpg" alt="Landscape 4"></li>
+					<li><img src="images/5.jpg" alt="Landscape 5"></li>
+					<li><img src="images/6.jpg" alt="Landscape 6"></li>
+					<li><img src="images/7.jpg" alt="Landscape 7"></li>
+					<li><img src="images/8.jpg" alt="Landscape 8"></li>
+				</ul>
+			</div>
+		</article>
+	</section>
+	<section>
+		<article class="buckets">
+			<div class="bucket">
+			<div id="bucket-tag">
+				<h2>Featured Post</h2>
+				<h2><b>Premium</b></h2>
+			</div>
+			<img src="https://placeimg.com/400/200/any"/>
+			<p>what they say?<a href="#">read more..</a></p>
+			</div>
+			<div class="bucket">
+			<div id="bucket-tag">
+				<h2>Top Post</h2>
+				<h2><b>Premium</b></h2>
+			</div>
+			<img src="https://placeimg.com/400/200/animals"/>
+			<p>what they say?<a href="#">read more..</a></p>
+			</div>
+			<div class="bucket">
+			<div id="bucket-tag">
+				<h2>Featured Post</h2>
+				<h2><b>Premium</b></h2>
+			</div>
+			<img src="https://placeimg.com/400/200/nature"/>
+			<p>what they say?<a href="#">read more..</a></p>
+			</div>
+			<div class="bucket">
+			<div id="bucket-tag">
+				<h2>Featured Post</h2>
+				<h2><b>Premium</b></h2>
+			</div>
+			<img src="https://placeimg.com/400/200/people"/>
+			<p>what they say?<a href="#">read more..</a></p>
+			</div>
+			<div class="bucket">
+			<div id="bucket-tag">
+				<h2>Featured Post</h2>
+				<h2><b>Premium</b></h2>
+			</div>
+			<img src="https://placeimg.com/400/200/arch"/>
+			<p>what they say?<a href="#">read more..</a></p>
+			</div>
+			<div class="bucket">
+			<div id="bucket-tag">
+				<h2>Featured Post</h2>
+				<h2><b>Premium</b></h2>
+			</div>
+			<img src="https://placeimg.com/400/200/any"/>
+			<p>what they say?<a href="#">read more..</a></p>
+			</div>
+		</article>
+		<article class="other">
+		<div class="feedback" id="feedback1">
+			<h1>Would you recommend our service to other people?</h1>
+			<form action="feedback.php" method="post" id="feedback">
+				<p><input type="radio" name="rate" id="def" class="radio" value=1 /><label for="def">Definitely</label></p>
+				<p><input type="radio" name="rate" id="Prob" class="radio" value=2 /><label for="Prob">Probably</label></p>
+				<p><input type="radio" name="rate" id="ns" class="radio" value=3 /><label for="ns">Not Sure</label></p>
+				<p><input type="radio" name="rate" id="pn" class="radio" value=4 /><label for="pn">Probably not</label></p>
+				<p><input type="radio" name="rate" id="dn" class="radio" value=5 /><label for="dn">Definitely not</label></p>
+			</form>
+		</div>
+		<div>
+			<div id="data" class="btn">get Data</div>
+			<form action="subscribe.php" method="post" id="subscribe">
+				<input type="email" name="email" id="email" placeholder="your  mail"/>
+				<input type="submit" name="send" value="subscribe"/>
+			</form>
+		</div>
+		</article>
+	</section>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="script/flotr2.min.js"></script>
+	<script>
+		var data_x=[],data_y=[];
+		$(document).ready(function(){
+		
+		
+		 $('#feedback').click(function(){
+			loadData();
+			});
+			
+		 	 var newload=true;
+		 $('#feedback').on('click','input',function(){
+			 if(newload)
+			 {
+			 
+				 var dataString='data='+$('input[name=rate]:checked').val();
+				 
+				 console.log(dataString);
+				 $.ajax({
+				type:"POST",
+				url:"add.php",
+				data:dataString,
+				success:function(data){
+						console.log(data);
+						newload=false;
+						$('#feedback1').html('');
+						$('#feedback1').append(' '+data['type']);
+						}
+				}); 
+			 }
+			 
+		 });
+
+		 function loadData(){
+			$.ajax({
+			type:"POST",
+			url:"server.php",
+			datatype:"json",
+			success:function(data)
+					{
+						putData(data);
+					}
+			});
+			}
+			
+		function putData(data)
+		{
+			$rating=data["result"];
+		
+			data_x=[
+				[0,"definitly"],
+				[1,"Probably"],
+				[2,"not sure"],
+				[3,"probably not"],
+				[4,"definitly not"]
+			];
+			
+			data_y=[
+				[0,parseInt($rating["d"])],
+				[1,parseInt($rating["p"])],
+				[2,parseInt($rating["ns"])],
+				[3,parseInt($rating["pn"])],
+				[4,parseInt($rating["dn"])]
+			];
+			alert(data_y);	
+			
+		}
+		$('#data').click(function(){
+				$('#feedback1').addClass('chart').removeClass('feedback');
+				Flotr.draw(document.getElementById("feedback1"),data_y,{
+				title:"Sample",
+				colors:["red"],
+				bars:{
+				show:true,
+				barWidth:0.6,
+				shadowSize:0.3,
+				fillOpacity:0.8,
+				lineWidth:0.4,
+					},
+				yaxis:{
+				min:0,
+				tickDecimals:0
+				},
+				xaxis:{
+				ticks:data_x
+				},
+				/*grid: {
+				horizontalLines: false,
+				verticalLines: false,
+				}*/
+				});
+			});
+		});
+	</script>
+	</body>
+</html>

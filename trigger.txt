@@ -1,0 +1,50 @@
+DELIMITER //
+create trigger entry 
+AFTER INSERT 
+on product FOR EACH ROW
+BEGIN
+DECLARE price  int,name varchar(50),id int;
+SELECT id=i.id from INSERTED i;
+SELECT name=i.name from INSERTED i;
+SELECT price=i.price from INSERTED i;
+INSERT INTO history values(id,name,price);
+print 'Trigger occured';
+END;//
+DELIMITER ;
+
+
+/*working code*/
+DELIMITER $$
+create trigger recordTable
+AFTER INSERT 
+on product FOR EACH ROW
+BEGIN
+	INSERT INTO history values(NEW.id,NEW.name,NEW.price);
+END $$
+
+DELIMITER ;
+/*for delete*/
+DELIMITER $$
+create trigger entry_deleted
+AFTER DELETE 
+on product FOR EACH ROW
+BEGIN
+	INSERT INTO deleted_record values(OLD.id,OLD.name,OLD.price);
+END $$
+
+DELIMITER ;
+
+
+
+
+/*actual database change*/
+DELIMITER $$
+create trigger vehicle_delete
+AFTER DELETE 
+on vehicle FOR EACH ROW
+BEGIN
+	INSERT INTO vehicle_record values(OLD.vid,OLD.age,OLD.type,OLD.fee,OLD.regnum,OLD.available,OLD.name,OLD.image);
+END $$
+
+DELIMITER ;
+
