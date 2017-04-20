@@ -6,7 +6,7 @@ Hi,
   2. Agent(supplier)
 
 
-#Technology used
+# Technology used
 <ul>
 <li>HTML</li>
 <li>CSS</li>
@@ -15,7 +15,7 @@ Hi,
 <li>MYSQL</li>
 </ul>
 
-#Agent:
+# Agent:
  <p> Agent has two facility :-
    <ol>
    <li>New Booking</li>
@@ -25,10 +25,10 @@ Hi,
   
   Agent can supply any number of car.Agent can track his car<br/> which he has rented and can get the news about any new car demand.
   
-#Customer:
+# Customer:
  Customer can book the car based on price,age,Category.<br/>
  New offer's are generated automatically by the system based on user usage.
 
-#Live Website:
+# Live Website:
  focus of the website is on back-end task. It depend heavily on database. you can find this project on visiting following website <a href="http://search.likesyou.org"> visit link</a>
  UI is not focussed as backend task has taken lots of time.
